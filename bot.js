@@ -49,4 +49,3 @@ client.on('message', (message) => { //Событие отправки сообщ
 
 //Токен
 client.login(process.env.BOT_TOKEN); 
-process.env.BOT_TOKEN = 'Хуй' //Защита от кражи токена
