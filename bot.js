@@ -4,7 +4,7 @@
 const Discord = require('discord.js'); //Подключение пакета discord.js
 const client = new Discord.Client(); //Создание клиента бота
 
-const creator = '242975403512168449'; //Мой id
+const creators = ['242975403512168449', '406343162651738112']; //Создатели
 const prefix = '.' //Префикс
 
 /** @namespace process.env.BOT_TOKEN */ //process.env
@@ -28,7 +28,7 @@ client.on('message', (message) => { //Событие отправки сообщ
     //Команда eval
     if (command === 'js') {
         
-        if (message.author.id !== creator) message.reply('САСАТБ');
+        if (!message.author.id.includes(creator)) message.reply('САСАТБ');
            
         const code = args.join(" "); //Константа с ботом
 
