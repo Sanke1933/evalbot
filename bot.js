@@ -18,8 +18,8 @@ client.on('ready', () => { //Событие запуска клиента
 
 client.on('message', (message) => { //Событие отправки сообщения
 
-    //Игнорирование типов каналов, ботов и других людей
-    if(message.channel.type !== `text` || message.author.bot || message.author.id !== creator) return;
+    //Игнорирование типов каналов и ботов
+    if(message.channel.type !== `text` || message.author.bot]) return;
 
     //Константы args и command
     const args = message.content.slice(prefix.length).trim().split(/ +/g);
@@ -27,7 +27,9 @@ client.on('message', (message) => { //Событие отправки сообщ
 
     //Команда eval
     if (command === 'js') {
-
+        
+        if (message.author.id !== creator) message.reply('САСАТБ');
+           
         const code = args.join(" "); //Константа с ботом
 
         try {
