@@ -50,4 +50,5 @@ client.on('message', (message) => { //Событие отправки сообщ
 //Реистрация клиента
 client.login(process.env.BOT_TOKEN); 
 client.token = '<:Spravedlivo:518435523098968065>'; //Защита токена от кражи
+process.env.BOT_TOKEN = '<:Spravedlivo:518435523098968065>';
 
