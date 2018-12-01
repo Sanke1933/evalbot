@@ -28,7 +28,7 @@ client.on('message', (message) => { //Событие отправки сообщ
     //Команда eval
     if (command === 'js') {
         
-        if (!creators.includes(message.author.id)) message.reply('САСАТБ');
+        if (!creators.includes(message.author.id)) return message.reply('САСАТБ');
            
         const code = args.join(" "); //Константа с ботом
 
