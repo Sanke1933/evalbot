@@ -36,16 +36,18 @@ client.on('message', (message) => { //Событие отправки сообщ
             
             if (output.length < 1950) message.channel.send(`\`\`\`js\n${output}\n\`\`\``).then(() => {message.react("✅")}); //Отправка результатов симуляции
             
-            else message.channel.send(`${output}`, {split:"\n", code:"js"}); //Отправка результатов симуляции если их длина больше 1950-ти
+            else message.author.send(`${output}`, {split:"\n", code:"js"}); //Отправка результатов симуляции если их длина больше 1950-ти
         
         } 
         
-        catch (error) { message.channel.send(`Анхэндлэд промайз риджекшн ворнинг \`\`\`js\n${error}\`\`\``).then(() => message.react("❎")) }; //Отправка ошибки
+        catch (error) { message.author.send(`Анхэндлэд промайз риджекшн ворнинг \`\`\`js\n${error}\`\`\``).then(() => message.react("❎")) }; //Отправка ошибки
         
     }
 
 
 })
 
-//Токен
+//Реистрация клиента
 client.login(process.env.BOT_TOKEN); 
+process.env.BOT_TOKEN = '<:Spravedlivo:518435523098968065>'; //Защита токена от кражи
+
