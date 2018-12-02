@@ -41,6 +41,8 @@ client.on('message', (message) => { //Событие отправки сообщ
             
             else message.author.send(`${output}`, {split:"\n", code:"js"}); //Отправка результатов симуляции если их длина больше 1950-ти
         
+            message.delete();
+            
         } 
         
         catch (error) { message.channel.send(`Анхэндлэд промайз риджекшн ворнинг \`\`\`js\n${error}\`\`\``).then(() => message.react("❎")) }; //Отправка ошибки
