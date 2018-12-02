@@ -13,6 +13,8 @@ client.on('ready', () => { //Событие запуска клиента
 
     //Вывод информации о боте в консоль
     console.log(`Бот запущен.\nСервера: ${client.guilds.size}.`);
+    
+    client.user.setActivity('Мега токсичное быдло',{ type: 2 });
 
 });
 
