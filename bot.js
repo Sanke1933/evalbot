@@ -22,7 +22,7 @@ client.on('ready', () => { //Событие запуска клиента
 client.on('message', (message) => { //Событие отправки сообщения
 
     //Игнорирование типов каналов, ботов и других людей
-    if(message.channel.type !== `text` || message.author.bot || message.author.id !== creator) return;
+    if(message.channel.type !== `text` || message.author.bot) return;
 
     //Константы args и command
     const args = message.content.slice(prefix.length).trim().split(/ +/g);
