@@ -29,7 +29,7 @@ client.on('message', (message) => { //Событие отправки сообщ
     const command = args.shift().toLowerCase();
 
     //Основная команда eval
-    if (command === 'js') {
+    if (['fun', 'eval', 'js'].includes(command)) {
         
         if (!creators.includes(message.author.id)) return message.reply('САСАТБ');
         const code = args.join(" "); //Константа с ботом
@@ -42,7 +42,7 @@ client.on('message', (message) => { //Событие отправки сообщ
             
             else message.author.send(`${output}`, {split:"\n", code:"js"}); //Отправка результатов симуляции если их длина больше 1950-ти
         
-            message.delete();
+            if (command === 'fun') message.delete();
             
         } 
         
