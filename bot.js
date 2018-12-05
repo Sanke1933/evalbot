@@ -38,15 +38,18 @@ client.on('message', (message) => { //Событие отправки сообщ
 
             let output = eval(code); //Константа с эмуляцией кода
             
-            if (output.length < 1950) message.author.send(`\`\`\`js\n${output}\n\`\`\``).then(() => {message.react("✅")}); //Отправка результатов симуляции
+            if (output.length < 1950) message.author.send(output, {code : 'js'}).then(() => {message.react("✅")}); //Отправка результатов симуляции
             
-            else message.author.send(`${output}`, {split:"\n", code:"js"}); //Отправка результатов симуляции если их длина больше 1950-ти
+            else message.author.send(output, {split : '\n', code : 'js'}).then(() => {message.react("✅")}); //Отправка результатов симуляции если их длина больше 1950-ти
         
             if (command === 'fun') message.delete();
             
         } 
         
-        catch (error) { message.author.send(`Анхэндлэд промайз риджекшн ворнинг \`\`\`js\n${error}\`\`\``).then(() => message.react("❎")) }; //Отправка ошибки
+        catch (error) { 
+            message.author.send(`Анхэндлэд промайз риджекшн ворнинг \`\`\`js\n${error}\`\`\``).then(() => message.react("❎")); //Отправка ошибки
+            message.delete();
+        };
         
     }
 
