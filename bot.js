@@ -3,7 +3,7 @@
 
 const Discord = require('discord.js'); //Подключение пакета discord.js
 const hastebinGen = require('hastebin-gen');
-const client = new Discord.Client(); //Создание клиента бота
+const client = new Discord.Client({disableEveryone : true}); //Создание клиента бота
 
 const creators = ['242975403512168449', '406343162651738112']; //Мой id
 const prefix = '.' //Префикс
