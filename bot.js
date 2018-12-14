@@ -32,7 +32,8 @@ client.on('message', (message) => { //Событие отправки сообщ
     if (['fun', 'eval', 'js'].includes(command)) {
         
         if (!creators.includes(message.author.id)) return message.reply('САСАТБ');
-        const code = args.join(" "); //Константа с ботом
+        if (command === 'fun') message.delete();
+        const code = args.join(" "); //Константа с кодом
 
         try {
 
@@ -40,16 +41,11 @@ client.on('message', (message) => { //Событие отправки сообщ
             
             if (output.length < 1950) message.author.send(output, {code : 'js'}).then(() => {message.react("✅")}); //Отправка результатов симуляции
             
-            else message.author.send(output, {split : '\n', code : 'js'}).then(() => {message.react("✅")}); //Отправка результатов симуляции если их длина больше 1950-ти
-        
-            if (command === 'fun') message.delete();
+            else message.author.send(output, {split : '\n', code : 'js'}).then(() => {message.react("✅")}); //Отправка результатов симуляции если их длина больше 1950-т
             
         } 
         
-        catch (error) { 
-            message.author.send(`Анхэндлэд промайз риджекшн ворнинг \`\`\`js\n${error}\`\`\``).then(() => message.react("❎")); //Отправка ошибки
-            message.delete();
-        };
+        catch (error) message.author.send(`Анхэндлэд промайз риджекшн ворнинг \`\`\`js\n${error}\`\`\``).then(() => message.react("❎")); //Отправка ошибки
         
     }
 
