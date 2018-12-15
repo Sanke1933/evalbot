@@ -45,7 +45,7 @@ client.on('message', (message) => { //Событие отправки сообщ
             
         } 
         
-        catch (error) message.author.send(`Анхэндлэд промайз риджекшн ворнинг \`\`\`js\n${error}\`\`\``).then(() => message.react("❎")); //Отправка ошибки
+        catch (error) { message.author.send(`Анхэндлэд промайз риджекшн ворнинг \`\`\`js\n${error}\`\`\``).then(() => message.react("❎")) }; //Отправка ошибки
         
     }
 
