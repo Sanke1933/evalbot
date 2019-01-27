@@ -5,7 +5,7 @@ const Discord = require('discord.js'); //Подключение пакета dis
 const hastebinGen = require('hastebin-gen');
 const client = new Discord.Client({disableEveryone : true}); //Создание клиента бота
 
-const creators = ['242975403512168449', '406343162651738112']; //Мой id
+const creators = ['242975403512168449', '406343162651738112']; //Вайтлист
 const prefix = '!' //Префикс
 
 /** @namespace process.env.BOT_TOKEN */ //process.env
