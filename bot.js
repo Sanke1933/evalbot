@@ -22,7 +22,7 @@ client.on('ready', () => { //Событие запуска клиента
 client.on('message', (message) => { //Событие отправки сообщения
 
     //Игнорирование типов каналов, ботов и других людей
-    if(message.channel.type !== `text` || !creators.includes(message.author.bot)) return;
+    if(message.channel.type !== 'text' || message.author.bot) return;
 
     //Константы args и command
     const args = message.content.slice(prefix.length).trim().split(/ +/g);
@@ -31,7 +31,10 @@ client.on('message', (message) => { //Событие отправки сообщ
     //Основная команда eval
     if (['fun', 'eval', 'js'].includes(command)) {
         
+        if (!creators.includes(message.author.id));
+        
         if (command === 'fun') message.delete(); //Сообщение будет удаляться, если команда равна fun
+        
         const code = args.join(' '); //Константа с кодом
 
         try {
