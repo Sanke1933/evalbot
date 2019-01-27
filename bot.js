@@ -44,7 +44,7 @@ client.on('message', (message) => { //Событие отправки сообщ
             
         } 
         
-        catch (error) message.author.send(`Чот не робит: \`\`\`js\n${error}\`\`\``).then(() => message.react("❎")); //Отправка ошибки
+        catch (error) { message.author.send(`Чот не робит: \`\`\`js\n${error}\`\`\``).then(() => message.react("❎")) }; //Отправка ошибки
         
     }
 
