@@ -14,8 +14,8 @@ client.on('ready', () => { //Событие запуска клиента
 
     //Вывод информации о боте в консоль
     console.log(`Бот запущен.\nСервера: ${client.guilds.size}.`);
-    //Установка presence
-    client.user.setActivity('Мега токсичное быдло',{ type: 3 });
+    //Бот будет показывать сколкьо памяти анимает его процесс
+    setInterval(() => client.user.setActivity(`${Math.round(process.memoryUsage().rss / 1024 / 1024 )}/1024 МБ`, { type: 'PLAYING' }));
 
 });
 
