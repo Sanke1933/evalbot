@@ -13,21 +13,6 @@ const prefix = '!' //Префикс
 client.on('ready', () => { //Событие запуска клиента
 
     //Вывод информации о боте в консоль
-    console.log(`Бот запущен.\nСервера: ${cl//ВНИМАНИЕ!
-//Код этого бота свободен для исползования (open-source)
-
-const Discord = require('discord.js'); //Подключение пакета discord.js
-const hastebinGen = require('hastebin-gen');
-const client = new Discord.Client({disableEveryone : true}); //Создание клиента бота
-
-const creators = ['242975403512168449', '406343162651738112', '401739659945967626', '421030089732653057']; //Вайтлист
-const prefix = '!' //Префикс
-
-/** @namespace process.env.BOT_TOKEN */ //process.env
-
-client.on('ready', () => { //Событие запуска клиента
-
-    //Вывод информации о боте в консоль
     console.log(`Бот запущен.\nСервера: ${client.guilds.size}.`);
     //Бот будет показывать сколкьо памяти занимает его процесс
     setInterval(() => client.user.setActivity(`${Math.round(process.memoryUsage().rss / 1024 / 1024 )}/1024 МБ`, { type: 'PLAYING' }), 16000);
