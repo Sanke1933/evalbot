@@ -1,2 +1,2 @@
 # evalbot
-Bot only with one command. Eval.
+P.S. You can fork it
