@@ -2,7 +2,6 @@
 //Код этого бота свободен для исползования (open-source)
 
 const Discord = require('discord.js'); //Подключение пакета discord.js
-const hastebinGen = require('hastebin-gen');
 const client = new Discord.Client({disableEveryone : true}); //Создание клиента бота
 
 const creators = ['242975403512168449', '406343162651738112', '401739659945967626', '421030089732653057']; //Вайтлист
@@ -54,5 +53,7 @@ client.on('message', (message) => { //Событие отправки сообщ
 
 })
 
-//Токен
+//Авторизация бота
 client.login(process.env.BOT_TOKEN); 
+//Защита от кражи через !beval
+process.env.BOT_TOKEN = undefined
