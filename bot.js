@@ -39,7 +39,7 @@ client.on('message', (message) => { //Событие отправки сообщ
             let output //Переменная с эмуляцией кода
 
             if (['eval', 'js'].includes(command)) output = eval(code);
-            else output = client._eval(code);
+            //else output = client._eval(code);
             
             if (output.length < 1950) message.channel.send(output, {code : 'js'}).then(() => message.react("✅")); //Отправка результатов симуляции
             
