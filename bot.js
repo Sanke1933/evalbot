@@ -28,7 +28,7 @@ client.on('message', (message) => { //Событие отправки сообщ
     const command = args.shift().toLowerCase();
 
     //Основная команда eval
-    if (['beval', 'eval', 'js'].includes(command)) {
+    if ([/*'beval', */'eval', 'js'].includes(command)) {
 
         try {
 
